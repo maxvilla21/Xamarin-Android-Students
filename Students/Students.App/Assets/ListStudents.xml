@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Students>
+  <Student>
+    <Name>Luis Alva</Name>
+    <Location>México</Location>
+  </Student>
+  <Student>
+    <Name>Carlos Pérez</Name>
+    <Location>Colombia</Location>
+  </Student>
+</Students>
