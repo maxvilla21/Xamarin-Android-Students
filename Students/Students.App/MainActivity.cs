@@ -34,20 +34,25 @@ namespace Students.App
 
         public  void GetStudenFromXml()
         {
-           //cargando el recurso
+
+
+            /* Opcion 1
            var  xml = XDocument.Load(Assets.Open("ListStudents.xml"));
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(xml.ToString());
-
             string jsonString = JsonConvert.SerializeXmlNode(doc);
             JObject response = JsonConvert.DeserializeObject<dynamic>(jsonString);
-
             var studentsString = response.Value<JObject>("Students");
             var array = (JArray)studentsString["Student"];
+            var listStudents = JsonConvert.DeserializeObject<List<Student>>(array.ToString());
+            */
 
-            var students = JsonConvert.DeserializeObject<List<Student>>(array.ToString());
-   
-             listViewStudents.Adapter = new StudentsAdapter(this, students, Resource.Layout.ListItem, Resource.Id.tvName,Resource.Id.tvLocation);
+            /*Opcion 2*/
+            XmlSerializer serializer = new XmlSerializer(typeof(Entities.Students));
+            var Studentlst = (Entities.Students)serializer.Deserialize(Assets.Open("ListStudents.xml"));
+
+
+            listViewStudents.Adapter = new StudentsAdapter(this, Studentlst.StudentList, Resource.Layout.ListItem, Resource.Id.tvName,Resource.Id.tvLocation);
 
         }
 
