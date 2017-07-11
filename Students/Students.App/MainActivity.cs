@@ -29,10 +29,10 @@ namespace Students.App
 
            listViewStudents = FindViewById<ListView>(Resource.Id.listViewStudents);
 
-            GetStudenFromXML();
+            GetStudenFromXml();
         }
 
-        public  void GetStudenFromXML()
+        public  void GetStudenFromXml()
         {
            //cargando el recurso a un Xdocument
            var  xml = XDocument.Load(Assets.Open("ListStudents.xml"));
