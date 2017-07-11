@@ -34,8 +34,6 @@ namespace Students.App
 
         public  void GetStudenFromXml()
         {
-
-
             /* Opcion 1
            var  xml = XDocument.Load(Assets.Open("ListStudents.xml"));
             XmlDocument doc = new XmlDocument();
