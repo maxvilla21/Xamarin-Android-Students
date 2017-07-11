@@ -38,6 +38,7 @@ namespace Students.App
            var  xml = XDocument.Load(Assets.Open("ListStudents.xml"));
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(xml.ToString());
+
             string jsonString = JsonConvert.SerializeXmlNode(doc);
             JObject response = JsonConvert.DeserializeObject<dynamic>(jsonString);
 
