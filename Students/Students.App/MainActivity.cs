@@ -34,10 +34,9 @@ namespace Students.App
 
         public  void GetStudenFromXml()
         {
-           //cargando el recurso a un Xdocument
+           //cargando el recurso
            var  xml = XDocument.Load(Assets.Open("ListStudents.xml"));
             XmlDocument doc = new XmlDocument();
-            //Pasando un xDocument a un XmlDocument
             doc.LoadXml(xml.ToString());
             string jsonString = JsonConvert.SerializeXmlNode(doc);
             JObject response = JsonConvert.DeserializeObject<dynamic>(jsonString);
